@@ -4,6 +4,9 @@ import Hello from '@/components/Hello'
 import Produtos from '@/components/Produtos'
 import Estabelecimentos from '@/components/Estabelecimentos'
 import Carrinho from '@/components/Carrinho'
+import Login from '@/components/Login'
+import Cliente from '@/components/Cliente'
+import AreaPagamento from '@/components/AreaPagamento'
 
 Vue.use(Router)
 
@@ -28,6 +31,22 @@ export default new Router({
       path: '/carrinho',
       name: 'Carrinho',
       component: Carrinho
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/cliente',
+      name: 'Cliente',
+      component: Cliente
+    },
+
+    {
+      path: '/area_pagamento',
+      name: 'AreaPagamento',
+      component: AreaPagamento
     }
   ]
 })

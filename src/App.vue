@@ -54,6 +54,21 @@
             icon: 'shopping_cart',
             title: 'Carrinho',
             name: 'carrinho'
+          },
+           {
+            icon: 'lock',
+            title: 'Login',
+            name: 'login'
+          },
+          {
+            icon: 'face',
+            title: 'Cliente',
+            name: 'cliente'
+          },
+          {
+            icon: 'attach_money',
+            title: 'Area de Pagamento',
+            name: 'area_pagamento'
           }
         ],
         miniVariant: false,
