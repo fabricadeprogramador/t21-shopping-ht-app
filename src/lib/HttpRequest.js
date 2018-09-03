@@ -11,14 +11,20 @@ export default {
     return fetch(API_URL + "estabelecimento")
       .then(response => response.json())
   },
-  salvarCliente(cliente){
+  salvarCliente(cliente) {
     return axios.post(API_URL + "cliente", cliente)
-    .then(response => response.data)
+      .then(response => response.data)
   },
-  getUsuario(usuario){
-    return axios.post(API_URL+ "autenticar", usuario)
-    .then(response => response.data)
-  }
+  getUsuario(usuario) {
+    return axios.post(API_URL + "autenticar", usuario)
+      .then(response => response.data)
+  },
 
+  getEstabelecimentoPorId(id) {
+    console.log(id);
+
+    return axios.get(API_URL + "estabelecimento/" + id)
+      .then(response => response.data)
+  }
 
 };

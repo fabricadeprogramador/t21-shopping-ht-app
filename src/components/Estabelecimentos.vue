@@ -4,7 +4,7 @@
       <v-card>
 
         <v-list subheader>
-          <v-list-tile v-for="estabelecimento in estabelecimentos" :key="estabelecimento._id" avatar @click="">
+          <v-list-tile v-for="estabelecimento in estabelecimentos" :key="estabelecimento._id" avatar @click="abrirEstabelecimento(estabelecimento)">
 
             <v-list-tile-content>
               <v-list-tile-title v-html="estabelecimento.nome"></v-list-tile-title>
@@ -32,6 +32,15 @@
     data() {
       return {
         estabelecimentos: []
+      }
+    },
+
+    methods: {
+      abrirEstabelecimento(estabelecimento) {
+        HttpRequest.getEstabelecimentoPorId(estabelecimento._id).then(estabelecimento => {
+          localStorage.setItem("produtosDoEstabelecimento", JSON.stringify(estabelecimento.produtos));
+          this.$router.replace("/Produtos");
+        })
       }
     }
   }

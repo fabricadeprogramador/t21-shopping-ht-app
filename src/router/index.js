@@ -11,8 +11,7 @@ import AreaPagamento from '@/components/AreaPagamento'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Home',
       component: Hello
@@ -42,7 +41,6 @@ export default new Router({
       name: 'Cliente',
       component: Cliente
     },
-
     {
       path: '/area_pagamento',
       name: 'AreaPagamento',

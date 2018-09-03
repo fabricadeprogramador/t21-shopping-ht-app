@@ -31,7 +31,7 @@
     <!-- Dialog -->
     <v-layout row justify-center>
       <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-       
+
         <v-card>
 
           <v-toolbar dark color="primary">
@@ -39,10 +39,10 @@
               <v-icon>close</v-icon>
             </v-btn>
             <v-toolbar-title>Finalizar Compra</v-toolbar-title>
-            
+
           </v-toolbar>
 
-          
+
         </v-card>
       </v-dialog>
     </v-layout>
@@ -82,7 +82,7 @@
       },
 
       finalizarCompra() {
-          this.dialog = true;
+        this.$router.replace("/area_pagamento");
       }
     },
     data() {

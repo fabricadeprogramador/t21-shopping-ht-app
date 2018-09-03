@@ -92,9 +92,9 @@
   import HttpRequest from "@/lib/HttpRequest";
   export default {
     mounted() {
-      HttpRequest.getProdutos().then(produtos => {
-        this.produtos = produtos;
-      });
+      this.produtos = JSON.parse(localStorage.getItem("produtosDoEstabelecimento"));
+      console.log(this.produtos);
+
     },
     methods: {
       selecionarProduto(produto) {
@@ -102,7 +102,7 @@
         this.produtoSelecionado = produto;
       },
 
-      adicionarAoCarrinho(){
+      adicionarAoCarrinho() {
         this.carrinho = JSON.parse(localStorage.cart);
         this.carrinho.push(this.produtoSelecionado);
         localStorage.setItem("cart", JSON.stringify(this.carrinho));
@@ -113,11 +113,11 @@
       return {
         dialog: false,
         produtoSelecionado: {
-          nome:"",
-          descricao:"",
-          valor:0
+          nome: "",
+          descricao: "",
+          valor: 0
         },
-        carrinho:[],
+        carrinho: [],
         produtos: []
       }
     }
